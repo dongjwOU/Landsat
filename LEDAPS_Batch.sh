@@ -22,6 +22,7 @@ for i in *.tar.gz; do
 f" >> runjob
     echo " gdal_translate -co TFW=yes HDF4_EOS:EOS_GRID:\"$k\":Grid:band4 $name_b4.ti\
 f" >> runjob
+    echo " inputb3=$name_b3.tif inputb4=$name_b4.tif" >> runjob
     echo " ./grass_cluster.sh" >> runjob
     echo " ./NDVI_calc.sh" >> runjob
     qsub runjob
